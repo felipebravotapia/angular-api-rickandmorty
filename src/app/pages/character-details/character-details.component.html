@@ -1,0 +1,35 @@
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <strong>Nombre </strong>{{characterDetails?.name}}
+    </div>
+    <div class="col">
+      <strong>Estado </strong>{{characterDetails?.status}}
+    </div>
+    <div class="col">
+      <strong>Especie </strong>{{characterDetails?.species}}
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col">
+      <strong>Episodios ({{characterDetails?.episode?.length}})</strong>
+
+      <div class="row">
+        <div class="col-auto">
+          <ul class="list-group">
+            <li class="list-group-item" *ngFor="let ep of characterDetails?.episode; let i = index">
+              <a [href]="ep" target="_blank" class="text-truncate">{{ep }}</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+</div>
+

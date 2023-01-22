@@ -7,4 +7,8 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'proyectofinal';
+
+  navBarOpts = [
+    { path: '/characters', name: 'Characters' },
+  ];
 }
