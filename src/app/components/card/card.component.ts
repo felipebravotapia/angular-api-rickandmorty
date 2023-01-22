@@ -9,6 +9,7 @@ import {
   AfterViewInit,
 } from '@angular/core';
 import { Result } from 'src/app/interfaces/ICharacters';
+import { DataService } from '../../services/data.service';
 
 @Component({
   selector: 'app-card',
@@ -21,7 +22,7 @@ export class CardComponent implements OnInit, AfterViewInit {
   colors:string='';
   public removeEventListener!: () => void;
 
-  constructor(private renderer: Renderer2, private elementRef: ElementRef) {}
+  constructor(private renderer: Renderer2, private elementRef: ElementRef, private dataService: DataService) {}
 
   public handleAnchorClick(event: Event) {
     event.preventDefault();
@@ -50,7 +51,8 @@ export class CardComponent implements OnInit, AfterViewInit {
   }
 
   onCallDetailse(id: number) {
-    this.id.emit(id);
+    // this.id.emit(id);
+    this.dataService.viewDetailFn(id);
   }
 
 }

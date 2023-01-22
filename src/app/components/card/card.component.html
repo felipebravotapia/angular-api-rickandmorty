@@ -75,7 +75,7 @@
             <img class="img-responsive" [src]="character?.image" [alt]="character?.name">
           </div>
           <div class="mc-description">
-            <app-character-details [_id]="(character?.id ?? 0)" [_event]="id"></app-character-details>
+            <app-character-details [_id]="(character?.id ?? 0)"></app-character-details>
           </div>
         </div>
         <a class="mc-btn-action" (click)="onCallDetailse(character.id)">

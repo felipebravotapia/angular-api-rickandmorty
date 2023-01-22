@@ -10,20 +10,15 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class CharacterDetailsComponent implements OnInit {
   @Input() _id: number = 0;
-  @Input() _event = new EventEmitter<any>();
   characterDetails!: Result;
-
   id!: number;
-  event = new EventEmitter<any>();
 
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
     this.id = this._id;
-    this.event = this._event;
-
-    this.event.subscribe((ev) => {
-      if (ev === this.id) {
+    this.dataService.viwDetailSubjet.subscribe((Response) => {
+      if (Response === this.id) {
         this.getCharacterById(this.id);
       }
     });
