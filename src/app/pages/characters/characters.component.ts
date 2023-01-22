@@ -43,6 +43,7 @@ export class CharactersComponent implements OnInit {
         this.characters = dataSearch.results;
         this.info = dataSearch.info;
         this.totalPages = dataSearch?.info?.count;
+        this.p = 0;
       }
     });
   }

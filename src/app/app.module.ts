@@ -12,7 +12,7 @@ import { CharacterDetailsComponent } from './pages/character-details/character-d
 import { RandomColorDirective } from './services/random-color.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchComponent } from './components/search/search.component';
-
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 @NgModule({
   declarations: [
     AppComponent,
@@ -30,7 +30,8 @@ import { SearchComponent } from './components/search/search.component';
     NgxPaginationModule,
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]
