@@ -18,7 +18,6 @@ import { DataService } from '../../services/data.service';
 })
 export class CardComponent implements OnInit, AfterViewInit {
   @Input() _dataCharacter!: Result[];
-  id = new EventEmitter<any>();
   colors:string='';
   public removeEventListener!: () => void;
 
@@ -51,7 +50,6 @@ export class CardComponent implements OnInit, AfterViewInit {
   }
 
   onCallDetailse(id: number) {
-    // this.id.emit(id);
     this.dataService.viewDetailFn(id);
   }
 

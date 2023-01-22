@@ -1,4 +1,11 @@
-import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import {
+  Component,
+  EventEmitter,
+  Input,
+  OnDestroy,
+  OnInit,
+  Output,
+} from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { Result } from 'src/app/interfaces/ICharacters';
 import { BehaviorSubject } from 'rxjs';
@@ -8,20 +15,23 @@ import { BehaviorSubject } from 'rxjs';
   templateUrl: './character-details.component.html',
   styleUrls: ['./character-details.component.scss'],
 })
-export class CharacterDetailsComponent implements OnInit {
+export class CharacterDetailsComponent implements OnInit, OnDestroy {
   @Input() _id: number = 0;
   characterDetails!: Result;
   id!: number;
-
+  sub: any;
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
     this.id = this._id;
-    this.dataService.viwDetailSubjet.subscribe((Response) => {
+    this.sub = this.dataService.viwDetailSubjet.subscribe((Response) => {
       if (Response === this.id) {
         this.getCharacterById(this.id);
       }
     });
+  }
+  ngOnDestroy() {
+    this.sub.unsubscribe();
   }
 
   getCharacterById(id: number) {

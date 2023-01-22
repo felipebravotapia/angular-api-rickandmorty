@@ -1,6 +1,7 @@
 import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { Info, Result } from '../../interfaces/ICharacters';
+import { catchError, throwError } from 'rxjs';
 
 @Component({
   selector: 'app-characters',
@@ -13,10 +14,12 @@ export class CharactersComponent implements OnInit {
   p: number = 0;
   totalPages: number = 0;
   maxSize = 10;
+  errorMessage!: string;
 
   constructor(private dataService: DataService) {}
 
   ngOnInit(): void {
+    //escuchando la busqueda
     this.dataService.searchSubjet.subscribe((Response) => {
       this.search(Response);
     });
@@ -31,6 +34,7 @@ export class CharactersComponent implements OnInit {
 
   getAllCharacters(page: number) {
     this.dataService.getCharacters(page).subscribe((_character) => {
+      this.errorMessage = '';
       this.characters = _character.results;
       this.info = _character.info;
       this.totalPages = _character?.info?.count;
@@ -38,7 +42,15 @@ export class CharactersComponent implements OnInit {
   }
 
   search(data: string) {
-    this.dataService.searchChracter(data).subscribe((dataSearch) => {
+    this.dataService.searchChracter(data)
+    .pipe(
+      catchError((error) => {
+        const { message } = error;
+        this.errorMessage = message
+        return throwError(() => new Error(message));
+      })
+    )
+    .subscribe((dataSearch) => {
       if (dataSearch) {
         this.characters = dataSearch.results;
         this.info = dataSearch.info;
