@@ -72,7 +72,7 @@
 
         <div class="mc-content">
           <div class="img-container">
-            <img class="img-responsive" [src]="character?.image" [alt]="character?.name">
+            <img class="img-responsive animate__animated animate__fadeIn" [src]="character?.image" [alt]="character?.name">
           </div>
           <div class="mc-description">
             <app-character-details [_id]="(character?.id ?? 0)"></app-character-details>
@@ -82,7 +82,7 @@
           <i class="fa fa-bars"></i>
         </a>
         <div class="mc-footer">
-          <h4>
+          <h4 class="animate__animated animate__fadeIn">
             Created {{character?.created | date:'dd/MM/yyy HH:mm:ss' }}
           </h4>
         </div>

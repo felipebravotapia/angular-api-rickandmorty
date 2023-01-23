@@ -2,6 +2,7 @@ import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { Info, Result } from '../../interfaces/ICharacters';
 import { catchError, throwError } from 'rxjs';
+import { ISearch } from '../../interfaces/ISearch';
 
 @Component({
   selector: 'app-characters',
@@ -13,7 +14,7 @@ export class CharactersComponent implements OnInit {
   info!: Info;
   p: number = 0;
   totalPages: number = 0;
-  maxSize = 10;
+  maxSize = 12;
   errorMessage!: string;
 
   constructor(private dataService: DataService) {}
@@ -41,7 +42,7 @@ export class CharactersComponent implements OnInit {
     });
   }
 
-  search(data: string) {
+  search(data: ISearch) {
     this.dataService.searchChracter(data)
     .pipe(
       catchError((error) => {

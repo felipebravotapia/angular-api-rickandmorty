@@ -15,12 +15,17 @@
 
   <ng-template #contenido>
     <app-card
-      [_dataCharacter]="characters | paginate: { itemsPerPage: 20, currentPage: p, totalItems: totalPages }"></app-card>
-    <div class="row d-flex justify-content-center">
-      <div class="col-md-6 py-5">
-        <pagination-controls  previousLabel="Átras" nextLabel="Siguiente" [maxSize]="maxSize"
-          (pageChange)="onPageChange($event)"></pagination-controls>
+      [_dataCharacter]="characters | paginate: { itemsPerPage: 20, currentPage: p, totalItems: totalPages }">
+    </app-card>
+
+    <div  class="rounded-2 border border-danger mb-3 bg-light bg-gradient">
+      <div class="row d-flex justify-content-center">
+        <div class="col-auto py-3">
+          <pagination-controls [responsive]="true"  previousLabel="Átras" nextLabel="Siguiente" [maxSize]="maxSize"
+            (pageChange)="onPageChange($event)"></pagination-controls>
+        </div>
       </div>
     </div>
+
   </ng-template>
 </div>

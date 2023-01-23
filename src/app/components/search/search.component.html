@@ -1,4 +1,44 @@
 <form class="d-flex" [formGroup]="reactiveForm" (ngSubmit)="onSubmit(reactiveForm)">
-  <input class="form-control me-2" type="search" placeholder="Search by Name" formControlName="search" aria-label="Search">
-  <button class="btn btn-outline-success" type="submit">Search</button>
+  <!-- <input class="form-control me-2" type="search" placeholder="Search by Name" formControlName="search" aria-label="Search">
+   -->
+   <div class="input-group mb-3">
+    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Críterios de Búsqueda</button>
+    <ul class="dropdown-menu">
+      <li class="m-2">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" id="name" name="criteria" value="name" formControlName="criteria" checked>
+            <label class="form-check-label" for="name">
+              By Name
+            </label>
+          </div>
+      </li>
+      <li class="m-2">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="status" name="criteria" value="status" formControlName="criteria">
+          <label class="form-check-label" for="status">
+            By Status
+          </label>
+        </div>
+      </li>
+      <li class="m-2">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="gender" name="criteria" value="gender" formControlName="criteria">
+          <label class="form-check-label" for="gender">
+            By Gender
+          </label>
+        </div>
+      </li>
+      <li class="m-2">
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="species" name="criteria" value="species" formControlName="criteria">
+          <label class="form-check-label" for="species">
+            By Species
+          </label>
+        </div>
+      </li>
+    </ul>
+    <input type="search" class="form-control" formControlName="search" placeholder="Search by " aria-label="Text input with dropdown button">
+    <button class="btn btn-outline-secondary" type="submit">Search</button>
+  </div>
+  <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
 </form>
