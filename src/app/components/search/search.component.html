@@ -1,12 +1,10 @@
 <form class="d-flex" [formGroup]="reactiveForm" (ngSubmit)="onSubmit(reactiveForm)">
-  <!-- <input class="form-control me-2" type="search" placeholder="Search by Name" formControlName="search" aria-label="Search">
-   -->
    <div class="input-group mb-3">
     <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">Críterios de Búsqueda</button>
     <ul class="dropdown-menu">
       <li class="m-2">
           <div class="form-check">
-            <input class="form-check-input" type="radio" id="name" name="criteria" value="name" formControlName="criteria" checked>
+            <input class="form-check-input" type="radio" id="name" name="criteria" value="name" formControlName="criteria" [checked]="true">
             <label class="form-check-label" for="name">
               By Name
             </label>
@@ -36,9 +34,10 @@
           </label>
         </div>
       </li>
+      <li><hr class="dropdown-divider"></li>
+      <li><a class="dropdown-item" (click)="searchForm({ search: 'null', criteria:'null' })">Mostrar Todos</a></li>
     </ul>
-    <input type="search" class="form-control" formControlName="search" placeholder="Search by " aria-label="Text input with dropdown button">
+    <input type="search" class="form-control" formControlName="search" placeholder="Search by {{reactiveForm.value.criteria}}" aria-label="Text input with dropdown button">
     <button class="btn btn-outline-secondary" type="submit">Search</button>
   </div>
-  <!-- <button class="btn btn-outline-success" type="submit">Search</button> -->
 </form>

@@ -16,7 +16,7 @@ export class SearchComponent implements OnInit {
   ngOnInit(): void {
     this.reactiveForm = this.fb.group({
       search: ['', [Validators.required]],
-      criteria: [''],
+      criteria: ['name'],
     });
   }
 
