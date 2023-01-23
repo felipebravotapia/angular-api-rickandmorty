@@ -47,17 +47,18 @@ export class CharactersComponent implements OnInit {
     .pipe(
       catchError((error) => {
         const { message } = error;
-        this.errorMessage = message
+        this.errorMessage = message;
         return throwError(() => new Error(message));
       })
     )
     .subscribe((dataSearch) => {
       if (dataSearch) {
+        this.errorMessage = '';
         this.characters = dataSearch.results;
         this.info = dataSearch.info;
         this.totalPages = dataSearch?.info?.count;
         this.p = 0;
       }
-    });
+    })
   }
 }
