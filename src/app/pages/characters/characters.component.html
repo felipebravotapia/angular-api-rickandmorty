@@ -3,7 +3,7 @@
   <div class="row d-flex justify-content-center mt-5" *ngIf="errorMessage; else contenido">
 
     <div class="col-6 text-center">
-      <img src="../../../assets/no-hay-resultados.png" alt="sin resultados">
+      <img class="img-resultado" src="../../../assets/no-hay-resultados.png" alt="sin resultados">
       <h3 class="mt-4">Sin resultado encontrado</h3>
       <h5 class="mt-4">Puedes volver a cargar todos los personajes </h5>
       <button type="button" class="btn btn-outline-success btn-lg" (click)="getAllCharacters(1)">Volver a cargar</button>
@@ -18,7 +18,7 @@
       [_dataCharacter]="characters | paginate: { itemsPerPage: 20, currentPage: p, totalItems: totalPages }"></app-card>
     <div class="row d-flex justify-content-center">
       <div class="col-md-6 py-5">
-        <pagination-controls previousLabel="Átras" nextLabel="Siguiente" [maxSize]="maxSize"
+        <pagination-controls  previousLabel="Átras" nextLabel="Siguiente" [maxSize]="maxSize"
           (pageChange)="onPageChange($event)"></pagination-controls>
       </div>
     </div>
