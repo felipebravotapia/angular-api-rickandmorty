@@ -11,6 +11,10 @@ const routes: Routes = [
     path: '',
     component: CharactersComponent,
   },
+  {
+    path: '**',
+    component: CharactersComponent,
+  },
 ];
 
 @NgModule({
