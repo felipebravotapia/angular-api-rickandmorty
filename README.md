@@ -2,6 +2,13 @@
 
 [Working demo on netlify.app](https://inquisitive-speculoos-e7d383.netlify.app/)
 
+
+[![See full preview](https://user-images.githubusercontent.com/17596129/214322975-51cdd7b5-5933-4091-8d39-7b25bb0de2b9.png)](https://user-images.githubusercontent.com/17596129/214322975-51cdd7b5-5933-4091-8d39-7b25bb0de2b9.png)
+
+
+
+
+
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
 
 ## Development server
