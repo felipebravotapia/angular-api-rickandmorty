@@ -36,7 +36,6 @@ export class CharacterDetailsComponent implements OnInit, OnDestroy {
 
   getCharacterById(id: number) {
     this.dataService.getCharacterById(id).subscribe((_characterDetails) => {
-      console.log(_characterDetails);
       this.characterDetails = _characterDetails;
     });
   }

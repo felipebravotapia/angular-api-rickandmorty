@@ -36,29 +36,19 @@ export class CardComponent implements OnInit {
     );
   }
 
-  onCallDetailse(id: number, event: any) {
-    this.clickIcon(event);
-    this.dataService.viewDetailFn(id);
+  onCallDetails(id: number, event: any) {
+    this.clickIcon(event, id);
   }
 
-  clickIcon(event: any) {
+  clickIcon(event: any, id: number) {
     const icon = event.target;
-
     const Anchor = icon.parentElement;
     const article = Anchor.parentElement.classList;
     if (article.value.includes('mc-active')) {
-      /* icon.parentElement.classList
-        .removeClass('fa-bars')
-        .removeClass('fa-spin-fast')
-        .addClass('fa-arrow-left'); */
       this.renderer.removeClass(Anchor.parentElement, 'mc-active');
     } else {
-      icon.parentElement
-      /* icon.parentElement.classList.value
-        .removeClass('fa-arrow-left')
-        .removeClass('fa-spin-fast')
-        .addClass('fa-bars'); */
       this.renderer.addClass(Anchor.parentElement, 'mc-active');
+      this.dataService.viewDetailFn(id);
     }
   }
 
