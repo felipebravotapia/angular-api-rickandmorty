@@ -1,4 +1,6 @@
-# Proyectofinal (https://inquisitive-speculoos-e7d383.netlify.app/)
+# Proyectofinal Angular
+
+[Working demo on netlify.app](https://inquisitive-speculoos-e7d383.netlify.app/)
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.6.
 
