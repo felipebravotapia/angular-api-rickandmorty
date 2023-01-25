@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DataService } from '../../services/data.service';
 import { Info, Result } from '../../interfaces/ICharacters';
 import { catchError, throwError } from 'rxjs';

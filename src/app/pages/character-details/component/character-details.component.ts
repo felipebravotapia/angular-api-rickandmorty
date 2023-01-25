@@ -6,7 +6,7 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
-import { DataService } from '../../services/data.service';
+import { DataService } from '../../../services/data.service';
 import { Result } from 'src/app/interfaces/ICharacters';
 import { BehaviorSubject } from 'rxjs';
 

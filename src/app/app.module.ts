@@ -8,7 +8,7 @@ import { CharactersComponent } from './pages/characters/characters.component';
 import { CardComponent } from './components/card/card.component';
 import { HttpClientModule } from '@angular/common/http';
 import { NgxPaginationModule } from 'ngx-pagination';
-import { CharacterDetailsComponent } from './pages/character-details/character-details.component';
+import { CharacterDetailsComponent } from './pages/character-details/component/character-details.component';
 import { RandomColorDirective } from './services/random-color.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { SearchComponent } from './components/search/search.component';

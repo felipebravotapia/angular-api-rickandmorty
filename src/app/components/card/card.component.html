@@ -75,7 +75,10 @@
             <img class="img-responsive animate__animated animate__fadeIn" [src]="character?.image" [alt]="character?.name">
           </div>
           <div class="mc-description">
-            <app-character-details [_id]="(character?.id ?? 0)"></app-character-details>
+            <ng-container>
+              <app-character-details [_id]="(character?.id ?? 0)"></app-character-details>
+            </ng-container>
+
           </div>
         </div>
         <a class="mc-btn-action" (click)="onCallDetails(character.id, $event)">
