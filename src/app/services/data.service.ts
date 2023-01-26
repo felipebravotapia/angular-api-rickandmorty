@@ -32,6 +32,6 @@ export class DataService {
   searchChracter(search: ISearch) {
     let params = new HttpParams();
     params = params.append(search.criteria, search.search);
-    return this.httpClient.get<ICharacter>(this.URL + `/character`, { params: params });
+    return this.httpClient.get<ICharacter>(this.URL + `character`, { params: params });
   }
 }
